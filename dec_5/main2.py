@@ -104,9 +104,9 @@ def solve():
     # go through the maps backwards, to get from location to seed
     # if result is within seed range, candidate is the lowest for that seed, so we can return
 
-    min_location = float('inf')
-
     location_candidate = 0
+
+    # We know this will eventually succeed
     while True:
         current_number = location_candidate
         # consider the maps backwards
@@ -121,12 +121,7 @@ def solve():
             continue
 
         # we know this is the lowest location that's within the seed range, so we can break
-        if min_location > location_candidate:
-            min_location = location_candidate
-
-        break
-
-    return min_location
+        return location_candidate
 
 
 if __name__ == "__main__":
